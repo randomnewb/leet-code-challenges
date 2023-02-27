@@ -19,7 +19,6 @@ isIsogram "aba" = false
 
 Completed on January 24th, 2023
 
-**/
 
 function isIsogram(str) {
   str = str.toLowerCase();
@@ -68,3 +67,64 @@ function isIsogram(str) {
 console.log(isIsogram("Dermatoglyphics"));
 console.log(isIsogram("moose"));
 console.log(isIsogram("aba"));
+
+**/
+
+/*
+Find The Parity Outlier
+
+https://www.codewars.com/kata/5526fc09a1bbd946250002dc
+
+You are given an array (which will have a length of at least 3, but could be very large) containing integers. 
+The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. 
+Write a method that takes the array as an argument and returns this "outlier" N.
+
+Examples
+[2, 4, 0, 100, 4, 11, 2602, 36]
+Should return: 11 (the only odd number)
+
+[160, 3, 1719, 19, 11, 13, -21]
+Should return: 160 (the only even number)
+
+Completed on January 24th, 2023
+**/
+
+function findOutlier(integers) {
+  let evenOrOdd = 0;
+
+  // Determine if even or odd
+  for (i = 0; i < 3; i++) {
+    if (integers[i] % 2 === 0) {
+      evenOrOdd++;
+    }
+  }
+
+  // Even
+
+  let outlier = 0;
+
+  // If even, just look for the 'odd one out'
+  if (evenOrOdd >= 2) {
+    for (i = 0; i < integers.length; i++) {
+      if (Math.abs(integers[i] % 2) === Math.abs(1)) {
+        outlier = integers[i];
+        return integers[i];
+      }
+    }
+    // Odd
+    // If odd, look for the 'even one out'
+  } else {
+    for (i = 0; i < integers.length; i++) {
+      if (integers[i] % 2 === 0) {
+        outlier = integers[i];
+        return integers[i];
+      }
+    }
+  }
+}
+
+const a = [2, 4, 0, 100, 4, 11, 2602, 36];
+const b = [160, 3, 1719, 19, 11, 13, -21];
+
+console.log(findOutlier(a));
+console.log(findOutlier(b));
