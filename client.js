@@ -1,6 +1,47 @@
 console.log("Hello world!");
 
 /* 
+Bit Counting
+
+https://www.codewars.com/kata/526571aae218b8ee490006f4
+
+Write a function that takes an integer as input, 
+and returns the number of bits that are equal to one in the binary representation of that number. 
+You can guarantee that input is non-negative.
+
+Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+
+Completed on January 26th, 2023
+
+var countBits = function (n) {
+  let remainder = 0;
+  let binary = "";
+
+  while (n >= 1) {
+    remainder = n % 2;
+    n = Math.floor(n / 2);
+    binary += remainder.toString();
+  }
+
+  let result = 0;
+
+  for (let i = 0; i < binary.length; i++) {
+    if (binary[i] === "1") {
+      result++;
+    }
+  }
+
+  return result;
+};
+
+console.log(countBits(10)); // Expecting 2
+console.log(countBits(26)); // Expecting 3
+console.log(countBits(77231418)); // Expecting 14
+console.log(countBits(12525589)); // Expecting 11
+
+**/
+
+/* 
 Tribonacci Sequence
 
 https://www.codewars.com/kata/556deca17c58da83c00002db
