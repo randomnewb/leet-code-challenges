@@ -1,6 +1,39 @@
 console.log("Hello world!");
 
 /* 
+List Filtering
+
+https://www.codewars.com/kata/53dbd5315a3c69eed20002dd
+
+In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+Example
+filter_list([1,2,'a','b']) == [1,2]
+filter_list([1,'a','b',0,15]) == [1,0,15]
+filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+Completed on January 26th, 2023
+**/
+
+function filter_list(l) {
+  let n = [];
+  for (let i = 0; i < l.length; i++) {
+    if (typeof l[i] !== "string") {
+      n.push(l[i]);
+    }
+  }
+  return n;
+}
+
+const a = [1, 2, "a", "b"];
+const b = [1, "a", "b", 0, 15];
+const c = [1, 2, "aasf", "1", "123", 123];
+
+console.log(filter_list(a));
+console.log(filter_list(b));
+console.log(filter_list(c));
+
+/* 
 Bit Counting
 
 https://www.codewars.com/kata/526571aae218b8ee490006f4
