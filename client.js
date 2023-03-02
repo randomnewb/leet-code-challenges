@@ -1,5 +1,136 @@
 console.log("Hello world!");
 
+/*
+Calculating with Functions
+
+https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/
+
+This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+Requirements:
+
+There must be a function for each number from 0 ("zero") to 9 ("nine")
+There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy
+Each calculation consist of exactly one operation and two numbers
+The most outer function represents the left operand, the most inner function represents the right operand
+Division should be integer division. For example, this should return 2, not 2.666666...:
+eight(dividedBy(three()));
+
+Completed on January 27th, 2023
+**/
+
+function zero(a) {
+  let self = 0;
+
+  return helper(self, a);
+}
+function one(a) {
+  let self = 1;
+
+  return helper(self, a);
+}
+function two(a) {
+  let self = 2;
+
+  return helper(self, a);
+}
+function three(a) {
+  let self = 3;
+
+  return helper(self, a);
+}
+function four(a) {
+  let self = 4;
+
+  return helper(self, a);
+}
+function five(a) {
+  let self = 5;
+
+  return helper(self, a);
+}
+function six(a) {
+  let self = 6;
+
+  return helper(self, a);
+}
+function seven(a) {
+  let self = 7;
+
+  return helper(self, a);
+}
+function eight(a) {
+  let self = 8;
+
+  return helper(self, a);
+}
+function nine(a) {
+  let self = 9;
+
+  return helper(self, a);
+}
+
+function plus(a) {
+  let pass = "+" + a;
+
+  return pass;
+}
+function minus(a) {
+  let pass = "-" + a;
+
+  return pass;
+}
+
+function times(a) {
+  let pass = "*" + a;
+
+  return pass;
+}
+
+function dividedBy(a) {
+  let pass = "/" + a;
+
+  return pass;
+}
+
+function helper(self, a) {
+  let first = self;
+  let split = [];
+  let operand = "";
+  let second = null;
+
+  if (typeof a === "string") {
+    split = a.split("");
+    operand = split[0];
+    second = parseInt(split[1]);
+  }
+
+  switch (operand) {
+    case "*":
+      return first * second;
+      break;
+    case "/":
+      return Math.floor(first / second);
+      break;
+    case "+":
+      return first + second;
+      break;
+    case "-":
+      return first - second;
+    default:
+      return first;
+  }
+}
+
+console.log(seven(times(five())));
+console.log(four(plus(nine())));
+console.log(eight(minus(three())));
+console.log(six(dividedBy(two())));
+
 /* 
 Playing with digits
 
@@ -32,7 +163,6 @@ digPow(695, 2) should return 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
 digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
 
 Completed on January 27th, 2023
-**/
 
 function digPow(n, p) {
   // Break apart n into its own separate digits
@@ -66,6 +196,7 @@ console.log(digPow(89, 1));
 console.log(digPow(46288, 3));
 console.log(digPow(3456789, 5));
 console.log(digPow(10383, 6));
+**/
 
 /* 
 List Filtering
