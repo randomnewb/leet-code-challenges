@@ -1,6 +1,48 @@
 console.log("Hello world!");
 
 /*
+Regex validate PIN code
+
+https://www.codewars.com/kata/55f8a9c06c018a0d6e000132
+
+ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+If the function is passed a valid PIN string, return true, else return false.
+
+Examples (Input --> Output)
+"1234"   -->  true
+"12345"  -->  false
+"a234"   -->  false
+
+Completed on January 28th, 2023
+**/
+
+function validatePIN(pin) {
+  const regex = new RegExp(`^[0-9]+$`);
+
+  let length = pin.toString().length;
+
+  if (regex.test(pin)) {
+    if (length === 4 || length === 6) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
+
+console.log(validatePIN("1"));
+console.log(validatePIN("1234"));
+console.log(validatePIN("a234"));
+console.log(validatePIN(".234"));
+console.log(validatePIN("090909"));
+console.log(validatePIN("098765\n"));
+console.log(validatePIN("9¾9¾"));
+console.log(validatePIN("123456x"));
+
+/*
 Grasshopper - Summation
 
 https://www.codewars.com/kata/55d24f55d7dd296eb9000030
@@ -13,7 +55,6 @@ For example (Input -> Output):
 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
 
 Completed on January 28th, 2023
-**/
 
 var summation = function (num) {
   let result = 0;
@@ -32,6 +73,7 @@ console.log(summation(2));
 console.log(summation(8));
 console.log(summation(22));
 console.log(summation(100));
+**/
 
 /*
 Returning Strings
