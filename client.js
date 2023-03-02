@@ -1,6 +1,25 @@
 console.log("Hello world!");
 
 /*
+Returning Strings
+
+https://www.codewars.com/kata/55a70521798b14d4750000a4
+
+Make a function that will return a greeting statement that uses an input; 
+your program should return, "Hello, <name> how are you doing today?".
+
+Completed on January 28th, 2023
+**/
+
+function greet(name) {
+  let greet = "Hello," + " " + name + " " + "how are you doing today?";
+  return greet;
+}
+
+console.log(greet("Ryan"));
+console.log(greet("Shingles"));
+
+/*
 Calculating with Functions
 
 https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/
@@ -21,7 +40,6 @@ Division should be integer division. For example, this should return 2, not 2.66
 eight(dividedBy(three()));
 
 Completed on January 27th, 2023
-**/
 
 function zero(a) {
   let self = 0;
@@ -130,6 +148,7 @@ console.log(seven(times(five())));
 console.log(four(plus(nine())));
 console.log(eight(minus(three())));
 console.log(six(dividedBy(two())));
+**/
 
 /* 
 Playing with digits
