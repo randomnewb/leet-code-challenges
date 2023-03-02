@@ -1,6 +1,39 @@
 console.log("Hello world!");
 
 /*
+Grasshopper - Summation
+
+https://www.codewars.com/kata/55d24f55d7dd296eb9000030
+
+Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+For example (Input -> Output):
+
+2 -> 3 (1 + 2)
+8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
+
+Completed on January 28th, 2023
+**/
+
+var summation = function (num) {
+  let result = 0;
+  let counter = 0;
+
+  while (counter <= num) {
+    result += counter;
+    counter++;
+  }
+
+  return result;
+};
+
+console.log(summation(1));
+console.log(summation(2));
+console.log(summation(8));
+console.log(summation(22));
+console.log(summation(100));
+
+/*
 Returning Strings
 
 https://www.codewars.com/kata/55a70521798b14d4750000a4
@@ -9,7 +42,6 @@ Make a function that will return a greeting statement that uses an input;
 your program should return, "Hello, <name> how are you doing today?".
 
 Completed on January 28th, 2023
-**/
 
 function greet(name) {
   let greet = "Hello," + " " + name + " " + "how are you doing today?";
@@ -18,6 +50,7 @@ function greet(name) {
 
 console.log(greet("Ryan"));
 console.log(greet("Shingles"));
+**/
 
 /*
 Calculating with Functions
